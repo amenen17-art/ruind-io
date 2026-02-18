@@ -68,9 +68,9 @@ export default function RuindLanding() {
       {/* Nav */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: `${C.bg}dd`, backdropFilter: "blur(16px)", borderBottom: `1px solid ${C.border}`, padding: "0 24px", height: 52, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 2 }}>
-          <span style={{ fontFamily: C.serif, fontSize: 22, color: C.white }}>ruind</span>
-          <span style={{ fontFamily: C.serif, fontSize: 22, color: C.red }}>.</span>
-          <span style={{ fontFamily: C.mono, fontSize: 10, color: C.dim, marginLeft: 3 }}>io</span>
+          <span style={{ fontFamily: C.serif, fontSize: 28, fontWeight: 700, color: C.white, letterSpacing: "-0.02em" }}>ruind</span>
+          <span style={{ fontFamily: C.serif, fontSize: 28, fontWeight: 700, color: C.red }}>.</span>
+          <span style={{ fontFamily: C.mono, fontSize: 12, fontWeight: 600, color: C.muted, marginLeft: 2 }}>io</span>
         </div>
         <button onClick={() => emailRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })} style={{ padding: "7px 18px", borderRadius: 8, background: C.red, border: "none", color: "white", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: C.sans }}>Join Waitlist</button>
       </nav>
@@ -94,7 +94,7 @@ export default function RuindLanding() {
 
         <Fade delay={400}>
           <p style={{ fontSize: 18, color: C.muted, maxWidth: 480, margin: "20px auto 0", lineHeight: 1.6 }}>
-            The crowdsourced timeline of products that got worse. Track enshittification, shrinkflation, and corporate greed — together.
+            Google. Netflix. Instagram. The products you loved got worse — and now there's a record.
           </p>
         </Fade>
 
