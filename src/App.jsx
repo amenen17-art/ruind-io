@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-// Design Tokens
+// ─── Design Tokens ──────────────────────────────────────────────────────────
 const C = {
   bg: "#09090B",
   surface: "#131316",
@@ -25,7 +25,7 @@ const C = {
   sans: "'DM Sans','Helvetica Neue',sans-serif",
 };
 
-// Live Activity Feed Data
+// ─── Live Activity Feed Data ─────────────────────────────────────────────────
 const ACTIVITY_FEED = [
   { user: "shopper_k", action: "just logged", product: "Doritos Party Size", change: "−2oz, same price", tag: "Shrinkflation", icon: "🔥" },
   { user: "pissed_in_portland", action: "confirmed", product: "Netflix password share ban", change: "−4.2M subs abandoned it", tag: "Enshittification", icon: "😤" },
@@ -39,7 +39,7 @@ const ACTIVITY_FEED = [
   { user: "unit_price_hawk", action: "documented", product: "Reese's Party Pack", change: "40oz → 35.6oz, no price drop", tag: "Shrinkflation", icon: "🔥" },
 ];
 
-// Community Quotes
+// ─── Community Quotes ────────────────────────────────────────────────────────
 const HOT_TAKES = [
   { quote: "I append 'reddit' to every Google search now. The real product got worse, not me.", user: "SearchRIP", votes: "4,102", product: "Google Search" },
   { quote: "Literally counted the Charmin sheets. 264 last year, 208 today. SAME PRICE. I have receipts.", user: "toilet_paper_archivist", votes: "8,841", product: "Charmin Ultra" },
@@ -47,7 +47,7 @@ const HOT_TAKES = [
   { quote: "Streaming used to be 'all your shows, no ads.' Now it's 'some shows, all the ads.' Full circle.", user: "cord_cutter_regret", votes: "3,917", product: "Netflix" },
 ];
 
-// Utility Components
+// ─── Utility Components ──────────────────────────────────────────────────────
 function useInterval(callback, delay) {
   const savedCallback = useRef();
   useEffect(() => { savedCallback.current = callback; }, [callback]);
@@ -82,7 +82,7 @@ function FadeIn({ children, delay = 0, style = {} }) {
   );
 }
 
-// Live Activity Ticker
+// ─── Live Activity Ticker ────────────────────────────────────────────────────
 function ActivityTicker() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
@@ -169,7 +169,7 @@ function ActivityTicker() {
   );
 }
 
-// Hot Take Card
+// ─── Hot Take Card ────────────────────────────────────────────────────────────
 function HotTakeCard({ index }) {
   const [currentTake, setCurrentTake] = useState(index % HOT_TAKES.length);
   const take = HOT_TAKES[currentTake];
@@ -194,9 +194,9 @@ function HotTakeCard({ index }) {
       </div>
 
       <p style={{
-        fontFamily: C.sans, fontSize: 15,
-        color: C.white, margin: "0 0 14px 0", lineHeight: 1.65,
-        position: "relative", zIndex: 1, fontWeight: 400,
+        fontFamily: C.serif, fontSize: 15, fontStyle: "italic",
+        color: C.bright, margin: "0 0 14px 0", lineHeight: 1.6,
+        position: "relative", zIndex: 1,
       }}>
         "{take.quote}"
       </p>
@@ -228,7 +228,7 @@ function HotTakeCard({ index }) {
   );
 }
 
-// Stat Counter
+// ─── Stat Counter ────────────────────────────────────────────────────────────
 function AnimatedCount({ target, suffix = "", duration = 1500 }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -259,7 +259,7 @@ function AnimatedCount({ target, suffix = "", duration = 1500 }) {
   return <span ref={ref}>{count.toLocaleString()}{suffix}</span>;
 }
 
-// Product Card
+// ─── Product Card ────────────────────────────────────────────────────────────
 function ProductCard({ product, delay = 0 }) {
   const [hovered, setHovered] = useState(false);
   const declined = product.peak - product.score;
@@ -350,7 +350,7 @@ function ProductCard({ product, delay = 0 }) {
   );
 }
 
-// Thank You / Queue View
+// ─── Thank You / Queue View ──────────────────────────────────────────────────
 function ThankYouView({ email, queuePosition, onShare }) {
   const [copied, setCopied] = useState(false);
   const referralLink = `https://ruind.io?ref=${btoa(email).slice(0, 8)}`;
@@ -482,7 +482,7 @@ function ThankYouView({ email, queuePosition, onShare }) {
   );
 }
 
-// Main App
+// ─── Main App ─────────────────────────────────────────────────────────────────
 export default function App() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -606,8 +606,7 @@ export default function App() {
             color: C.body, lineHeight: 1.65,
             margin: "0 auto 36px", maxWidth: 560,
           }}>
-            Smaller portions. Worse quality. Higher prices.<br />
-            <strong style={{ color: C.bright }}>Join {count.toLocaleString()}+ people</strong> documenting every brand that got away with it — with receipts, not opinions.
+            Smaller portions. Worse quality. Higher prices. <strong style={{ color: C.bright }}>Join {count.toLocaleString()}+ people</strong> documenting every brand that got away with it — with receipts, not opinions.
           </p>
         </FadeIn>
 
@@ -895,19 +894,15 @@ export default function App() {
   );
 }
 
-// Nav
+// ─── Nav ─────────────────────────────────────────────────────────────────────
 function Nav() {
   return (
     <nav style={{
       display: "flex", alignItems: "center", justifyContent: "space-between",
       padding: "18px 32px", maxWidth: 1100, margin: "0 auto",
     }}>
-      <div style={{
-        fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
-        fontSize: 22, fontWeight: 400, fontStyle: "normal",
-        color: C.white, letterSpacing: "-0.01em",
-      }}>
-        ruind<span style={{ color: C.red }}>.</span>io
+      <div style={{ fontFamily: "'Instrument Serif', serif", fontSize: 22, color: C.white, fontStyle: "italic" }}>
+        ruind.<span style={{ color: C.red }}>io</span>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
         <span style={{ fontFamily: C.mono, fontSize: 11, color: C.dim, letterSpacing: "0.06em" }}>
@@ -930,7 +925,7 @@ function Nav() {
   );
 }
 
-// Google Fonts
+// ─── Google Fonts ─────────────────────────────────────────────────────────────
 function GoogleFonts() {
   useEffect(() => {
     const link = document.createElement("link");
