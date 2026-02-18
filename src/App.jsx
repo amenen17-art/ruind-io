@@ -29,7 +29,7 @@ function Fade({ children, delay = 0, style = {} }) {
 }
 
 const SITE_URL = "https://ruind.io";
-const SHARE_TEXT = "Smaller portions. Worse quality. Higher prices. Finally someone's tracking it.";
+const SHARE_TEXT = "Your favorite products are getting worse and this site is tracking all of it 👀";
 
 function handleXPost() {
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(SHARE_TEXT + " " + SITE_URL)}`, "_blank");
