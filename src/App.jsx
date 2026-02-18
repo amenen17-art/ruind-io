@@ -579,7 +579,7 @@ export default function App() {
           }}>
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: C.red, display: "inline-block", animation: "pulse 2s infinite" }} />
             <span style={{ fontFamily: C.mono, fontSize: 11, color: C.red, letterSpacing: "0.1em", textTransform: "uppercase" }}>
-              Tracking {count.toLocaleString()}+ products in decline
+              {count.toLocaleString()}+ ON THE WAITLIST
             </span>
           </div>
         </FadeIn>
@@ -607,7 +607,7 @@ export default function App() {
             margin: "0 auto 36px", maxWidth: 560,
           }}>
             Smaller portions. Worse quality. Higher prices.<br />
-            <strong style={{ color: C.bright }}>Join {count.toLocaleString()}+ people</strong> documenting every brand that got away with it — with receipts, not opinions.
+            Join {count.toLocaleString()}+ on the waitlist for early access to verified product-change timelines — with receipts, not opinions.
           </p>
         </FadeIn>
 
@@ -655,7 +655,7 @@ export default function App() {
 
           {/* Social proof micro-line */}
           <p style={{ fontFamily: C.sans, fontSize: 13, color: C.dim, margin: 0 }}>
-            Join <strong style={{ color: C.muted }}>{count.toLocaleString()} shoppers, data nerds & journalists</strong> — free, no spam
+            Invite-only launch. Early access goes out in batches. No spam
           </p>
         </FadeIn>
 
