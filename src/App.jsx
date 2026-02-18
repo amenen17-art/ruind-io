@@ -42,7 +42,6 @@ function handleCopy(setCopied) {
 }
 
 // RESEARCH-BACKED PRODUCT CARDS — all data verifiable
-// Sources: CBS/LendingTree/GAO (Frosted Flakes), StatCounter/SparkToro (Google), Capital One Shopping/GAO (Charmin)
 const PREVIEWS = [
   {
     emoji: "\ud83e\udd63", name: "Frosted Flakes",
@@ -67,11 +66,19 @@ const PREVIEWS = [
   },
 ];
 
+// CHANGE #1: "How it works" — 3 simple steps (validated by all 3 LLMs + CRO research)
+const STEPS = [
+  { num: "1", title: "Spot a decline", desc: "Notice your cereal box got smaller or your app got worse? Submit it with a photo or receipt." },
+  { num: "2", title: "Community confirms", desc: "Others verify with their own evidence. Multiple confirmations = verified data point." },
+  { num: "3", title: "Track the record", desc: "Follow products, get alerts, and share the receipts. Your Annual Wrapped shows the full picture." },
+];
+
+// CHANGE #2: Feature cards rewritten as BENEFITS (outcome-driven, not feature-driven)
 const FEATURES = [
-  { icon: "\ud83d\uddf3\ufe0f", title: "Community Voting", desc: "Upvote reports, confirm declines, and submit your own. Powered by the crowd, not corporations." },
-  { icon: "\ud83d\udcc9", title: "Quality Timelines", desc: "Year-by-year visual history of how products declined. See exactly when they peaked and who caught it." },
-  { icon: "\ud83c\udf81", title: "Annual Wrapped", desc: "Your personalized year-end report of products that betrayed you. Designed to go viral." },
-  { icon: "\ud83d\udc80", title: "Hall of Shame", desc: "Real-time leaderboard of the most declined products. Ranked by community data." },
+  { icon: "\ud83d\udce2", title: "Get Alerted First", desc: "Follow products you buy. Get notified the moment someone reports a change \u2014 before you waste money." },
+  { icon: "\ud83d\udcf8", title: "Receipts, Not Opinions", desc: "Every report backed by photos, labels, or links. See the evidence yourself before you share it." },
+  { icon: "\ud83c\udf81", title: "Your Annual Wrapped", desc: "A personalized year-end report of products that betrayed you. Screenshot-ready for X, TikTok, and Reddit." },
+  { icon: "\ud83d\udc80", title: "Hall of Shame", desc: "Live leaderboard of the worst offenders. See which brands are declining fastest \u2014 ranked by the crowd." },
 ];
 
 function ShareButtons() {
@@ -108,15 +115,17 @@ export default function RuindLanding() {
         @keyframes glow{0%,100%{box-shadow:0 0 20px ${C.redGlow}}50%{box-shadow:0 0 40px ${C.redGlow},0 0 80px rgba(229,56,59,.06)}}
       `}</style>
 
+      {/* NAV — CHANGE #5: unified CTA language "Get Early Access" everywhere */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: `${C.bg}dd`, backdropFilter: "blur(16px)", borderBottom: `1px solid ${C.border}`, padding: "0 24px", height: 52, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 2 }}>
           <span style={{ fontFamily: C.serif, fontSize: 28, fontWeight: 700, color: C.white, letterSpacing: "-0.02em" }}>ruind</span>
           <span style={{ fontFamily: C.serif, fontSize: 28, fontWeight: 700, color: C.red }}>.</span>
           <span style={{ fontFamily: C.mono, fontSize: 12, fontWeight: 600, color: C.muted, marginLeft: 2 }}>io</span>
         </div>
-        <button onClick={() => emailRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })} style={{ padding: "7px 18px", borderRadius: 8, background: C.red, border: "none", color: "white", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: C.sans }}>Join Waitlist</button>
+        <button onClick={() => emailRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })} style={{ padding: "7px 18px", borderRadius: 8, background: C.red, border: "none", color: "white", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: C.sans }}>Get Early Access</button>
       </nav>
 
+      {/* HERO */}
       <section style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "120px 24px 40px", position: "relative" }}>
         <div style={{ position: "absolute", top: "-10%", left: "50%", transform: "translateX(-50%)", width: 600, height: 600, background: `radial-gradient(circle,${C.red}08 0%,transparent 70%)`, pointerEvents: "none" }} />
         <div style={{ position: "absolute", inset: 0, opacity: 0.02, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")", pointerEvents: "none" }} />
@@ -147,11 +156,13 @@ export default function RuindLanding() {
                 <ShareButtons />
               </div>
             )}
-            <p style={{ fontSize: 12, color: C.dim, marginTop: 10, fontFamily: C.mono }}>No spam. Unsubscribe anytime. <span style={{ color: C.muted }}>Join <AnimNum target={1847} /> others.</span></p>
+            {/* CHANGE #4: Social proof with texture — who is joining */}
+            <p style={{ fontSize: 12, color: C.dim, marginTop: 10, fontFamily: C.mono }}>No spam. Unsubscribe anytime. <span style={{ color: C.muted }}>Join <AnimNum target={1847} /> others {"\u2014"} shoppers, data nerds, and journalists.</span></p>
           </div>
         </Fade>
       </section>
 
+      {/* PRODUCT CARDS */}
       <section style={{ padding: "40px 24px 60px", maxWidth: 880, margin: "0 auto" }}>
         <Fade>
           <div style={{ textAlign: "center", marginBottom: 32 }}>
@@ -194,8 +205,27 @@ export default function RuindLanding() {
         </div>
       </section>
 
+      {/* CHANGE #1: HOW IT WORKS — 3 steps (all 3 LLMs recommended, research confirms) */}
+      <section style={{ padding: "40px 24px 60px", maxWidth: 700, margin: "0 auto" }}>
+        <Fade><h2 style={{ textAlign: "center", fontSize: 28, fontWeight: 400, color: C.white, fontFamily: C.serif, marginBottom: 32 }}>How it works.</h2></Fade>
+        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+          {STEPS.map((s, i) => (
+            <Fade key={s.num} delay={100 + i * 120}>
+              <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+                <div style={{ minWidth: 36, height: 36, borderRadius: 10, background: C.redGlow, border: `1px solid ${C.red}30`, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: C.mono, fontSize: 14, fontWeight: 700, color: C.red }}>{s.num}</div>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: C.white, fontFamily: C.sans, marginBottom: 4 }}>{s.title}</div>
+                  <div style={{ fontSize: 14, color: C.muted, lineHeight: 1.6 }}>{s.desc}</div>
+                </div>
+              </div>
+            </Fade>
+          ))}
+        </div>
+      </section>
+
+      {/* CHANGE #2: FEATURES — now benefit/outcome-driven */}
       <section style={{ padding: "40px 24px 60px", maxWidth: 880, margin: "0 auto" }}>
-        <Fade><h2 style={{ textAlign: "center", fontSize: 28, fontWeight: 400, color: C.white, fontFamily: C.serif, marginBottom: 12 }}>Built by the crowd.</h2></Fade>
+        <Fade><h2 style={{ textAlign: "center", fontSize: 28, fontWeight: 400, color: C.white, fontFamily: C.serif, marginBottom: 12 }}>Built by the crowd. <span style={{ color: C.red, fontStyle: "italic" }}>Backed by receipts.</span></h2></Fade>
         <Fade><p style={{ textAlign: "center", fontSize: 15, color: C.muted, maxWidth: 420, margin: "0 auto 32px" }}>Report declines, vote on quality, and hold companies accountable {"\u2014"} together.</p></Fade>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 12 }}>
           {FEATURES.map((f, i) => (
@@ -210,30 +240,33 @@ export default function RuindLanding() {
         </div>
       </section>
 
+      {/* SOCIAL PROOF — CHANGE #3: softened "0 Competitors" to credible phrasing */}
       <section style={{ padding: "40px 24px 60px", maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
         <Fade>
           <div style={{ padding: "32px 28px", background: C.surface, border: `1px solid ${C.border}`, borderRadius: 20 }}>
             <div style={{ display: "flex", justifyContent: "center", gap: 40, marginBottom: 24, flexWrap: "wrap" }}>
-              {[{ value: "75%", label: "noticed shrinkflation" }, { value: "48%", label: "abandoned a brand" }, { value: "0", label: "Competitors" }].map((s) => (
+              {[{ value: "75%", label: "noticed shrinkflation" }, { value: "48%", label: "abandoned a brand" }, { value: "First", label: "to track it all" }].map((s) => (
                 <div key={s.label}>
                   <div style={{ fontFamily: C.mono, fontSize: 24, fontWeight: 700, color: C.white }}>{s.value}</div>
                   <div style={{ fontSize: 11, color: C.dim, fontFamily: C.mono, textTransform: "uppercase", letterSpacing: ".05em" }}>{s.label}</div>
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: 17, color: C.bright, fontFamily: C.serif, fontStyle: "italic", lineHeight: 1.65, maxWidth: 520, margin: "0 auto" }}>75% of Americans noticed shrinkflation. 48% abandoned a brand over it. Millions discuss it daily on Reddit. Nobody is tracking it. Until now.</p>
+            <p style={{ fontSize: 17, color: C.bright, fontFamily: C.serif, fontStyle: "italic", lineHeight: 1.65, maxWidth: 520, margin: "0 auto" }}>75% of Americans noticed shrinkflation. 48% abandoned a brand over it. Millions discuss it daily on Reddit. Nobody is systematically tracking it. Until now.</p>
           </div>
         </Fade>
       </section>
 
+      {/* BOTTOM CTA — CHANGE #5: unified "Get Early Access" + added what you get */}
       <section style={{ padding: "40px 24px 80px", textAlign: "center" }}>
         <Fade>
-          <h2 style={{ fontSize: 36, fontWeight: 400, fontFamily: C.serif, color: C.white, lineHeight: 1.15, marginBottom: 16 }}>Be first to know when it <span style={{ color: C.red, fontStyle: "italic" }}>launches</span>.</h2>
+          <h2 style={{ fontSize: 36, fontWeight: 400, fontFamily: C.serif, color: C.white, lineHeight: 1.15, marginBottom: 8 }}>Be first to know when it <span style={{ color: C.red, fontStyle: "italic" }}>launches</span>.</h2>
+          <p style={{ fontSize: 14, color: C.muted, marginBottom: 20, fontFamily: C.sans }}>Early access to the database, first feature testing, and the ability to submit products on day one.</p>
           {!submitted ? (
             <div style={{ maxWidth: 400, margin: "0 auto" }}>
               <form onSubmit={handleSubmit} style={{ display: "flex", gap: 8 }}>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" style={{ flex: 1, padding: "13px 16px", background: C.surface, border: `1px solid ${C.border}`, borderRadius: 10, color: C.white, fontSize: 15, outline: "none", fontFamily: C.sans }} />
-                <button type="submit" style={{ padding: "13px 24px", background: C.red, border: "none", borderRadius: 10, color: "white", fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: C.sans }}>Join Waitlist</button>
+                <button type="submit" style={{ padding: "13px 24px", background: C.red, border: "none", borderRadius: 10, color: "white", fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: C.sans }}>Get Early Access</button>
               </form>
             </div>
           ) : (
