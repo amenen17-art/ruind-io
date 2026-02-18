@@ -361,7 +361,7 @@ function ThankYouView({ email, queuePosition, onShare }) {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const tweetText = encodeURIComponent(`I just joined the @ruind_app waitlist — it's a community tracking every product that got smaller, worse, and more expensive. You already know something's been ruined. Now we're documenting it. 👀\n\nJoin here: ${referralLink}`);
+  const tweetText = encodeURIComponent(`I just joined the @ruind_app waitlist — 3,000+ people are catching brands in the act — shrinkflation, enshittification, all of it. Documented with receipts. 🔥\n\nJoin here: ${referralLink}`);
 
   return (
     <div style={{ maxWidth: 560, margin: "0 auto", padding: "60px 24px", textAlign: "center" }}>
