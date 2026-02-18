@@ -907,7 +907,7 @@ function Nav() {
         fontSize: 22, fontWeight: 400, fontStyle: "normal",
         color: C.white, letterSpacing: "-0.01em",
       }}>
-        ruind<span style={{ color: C.red }}>.</span>io
+        ruind<span style={{ color: C.red }}>.</span><span style={{ color: C.red }}>io</span>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
         <span style={{ fontFamily: C.mono, fontSize: 11, color: C.dim, letterSpacing: "0.06em" }}>
