@@ -28,6 +28,19 @@ function Fade({ children, delay = 0, style = {} }) {
   return <div style={{ opacity: show ? 1 : 0, transform: show ? "translateY(0)" : "translateY(20px)", transition: `all 0.7s cubic-bezier(0.22,1,0.36,1) ${delay}ms`, ...style }}>{children}</div>;
 }
 
+const SITE_URL = "https://ruind.io";
+const SHARE_TEXT = "Smaller portions. Worse quality. Higher prices. Finally someone's tracking it.";
+
+function handleXPost() {
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(SHARE_TEXT + " " + SITE_URL)}`, "_blank");
+}
+function handleReddit() {
+  window.open(`https://www.reddit.com/submit?url=${encodeURIComponent(SITE_URL)}&title=${encodeURIComponent(SHARE_TEXT)}`, "_blank");
+}
+function handleCopy(setCopied) {
+  navigator.clipboard.writeText(SITE_URL).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000); });
+}
+
 const PREVIEWS = [
   { emoji: "🔍", name: "Google Search", peak: 95, current: 29, decline: 69, tag: "Enshittification" },
   { emoji: "🎬", name: "Netflix", peak: 92, current: 34, decline: 63, tag: "Price Hike" },
@@ -40,6 +53,17 @@ const FEATURES = [
   { icon: "🎁", title: "Annual Wrapped", desc: "Your personalized year-end report of products that betrayed you. Designed to go viral." },
   { icon: "💀", title: "Hall of Shame", desc: "Real-time leaderboard of the most declined products. Ranked by community data." },
 ];
+
+function ShareButtons() {
+  const [copied, setCopied] = useState(false);
+  return (
+    <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
+      <button onClick={handleXPost} style={{ padding: "8px 16px", borderRadius: 8, background: "#1DA1F222", border: "1px solid #1DA1F244", color: C.bright, fontSize: 12, fontWeight: 600, cursor: "pointer", fontFamily: C.sans }}>𝕏 Post</button>
+      <button onClick={() => handleCopy(setCopied)} style={{ padding: "8px 16px", borderRadius: 8, background: `${C.border}22`, border: `1px solid ${C.border}44`, color: C.bright, fontSize: 12, fontWeight: 600, cursor: "pointer", fontFamily: C.sans }}>{copied ? "✓ Copied!" : "Copy Link"}</button>
+      <button onClick={handleReddit} style={{ padding: "8px 16px", borderRadius: 8, background: "#FF450022", border: "1px solid #FF450044", color: C.bright, fontSize: 12, fontWeight: 600, cursor: "pointer", fontFamily: C.sans }}>Reddit</button>
+    </div>
+  );
+}
 
 export default function RuindLanding() {
   const [email, setEmail] = useState("");
@@ -84,7 +108,10 @@ export default function RuindLanding() {
           <h1 style={{ fontSize: "clamp(42px,8vw,72px)", fontWeight: 400, fontFamily: C.serif, color: C.white, lineHeight: 1.05, letterSpacing: "-0.03em", maxWidth: 700 }}>They peaked.<br /><span style={{ color: C.red, fontStyle: "italic" }}>We tracked it.</span></h1>
         </Fade>
         <Fade delay={400}>
-          <p style={{ fontSize: 18, color: C.muted, maxWidth: 480, margin: "20px auto 0", lineHeight: 1.6 }}>Smaller portions. Worse quality. Higher prices. Finally, someone's tracking it.</p>
+          <p style={{ fontSize: 18, color: C.muted, maxWidth: 480, margin: "20px auto 0", lineHeight: 1.7 }}>
+            Smaller portions. Worse quality. Higher prices.<br />
+            <span style={{ color: C.body }}>Finally, someone's tracking it.</span>
+          </p>
         </Fade>
         <Fade delay={550}>
           <div style={{ marginTop: 36, width: "100%", maxWidth: 440 }}>
@@ -98,11 +125,7 @@ export default function RuindLanding() {
                 <div style={{ fontSize: 32, marginBottom: 8 }}>🎉</div>
                 <div style={{ fontSize: 18, fontWeight: 700, color: C.white, fontFamily: C.serif }}>You're #{position} on the list</div>
                 <p style={{ fontSize: 13, color: C.muted, margin: "8px 0 16px" }}>Share to move up. Every referral bumps you 10 spots.</p>
-                <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
-                  {[{ label: "𝕏 Post", bg: "#1DA1F2" }, { label: "Copy Link", bg: C.border }, { label: "Reddit", bg: "#FF4500" }].map((b) => (
-                    <button key={b.label} style={{ padding: "8px 16px", borderRadius: 8, background: `${b.bg}22`, border: `1px solid ${b.bg}44`, color: C.bright, fontSize: 12, fontWeight: 600, cursor: "pointer", fontFamily: C.sans }}>{b.label}</button>
-                  ))}
-                </div>
+                <ShareButtons />
               </div>
             )}
             <p style={{ fontSize: 12, color: C.dim, marginTop: 10, fontFamily: C.mono }}>No spam. Unsubscribe anytime. <span style={{ color: C.muted }}>Join <AnimNum target={1847} /> others.</span></p>
