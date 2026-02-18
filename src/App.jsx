@@ -124,11 +124,11 @@ export default function RuindLanding() {
           <div style={{ display: "inline-block", padding: "5px 14px", borderRadius: 20, background: C.redGlow, border: `1px solid ${C.red}30`, fontSize: 12, fontWeight: 600, color: C.red, fontFamily: C.mono, marginBottom: 28, animation: "pulse 3s ease infinite" }}>{"\u25cf"} Coming Soon {"\u2014"} Join the Waitlist</div>
         </Fade>
         <Fade delay={250}>
-          <h1 style={{ fontSize: "clamp(38px,7vw,64px)", fontWeight: 400, fontFamily: C.serif, color: C.white, lineHeight: 1.1, letterSpacing: "-0.03em", maxWidth: 740 }}>Smaller portions. Worse quality.<br /><span style={{ color: C.red, fontStyle: "italic" }}>Higher prices.</span></h1>
+          <h1 style={{ fontSize: "clamp(38px,7vw,64px)", fontWeight: 400, fontFamily: C.serif, color: C.white, lineHeight: 1.1, letterSpacing: "-0.03em", maxWidth: 740 }}>Your favorite products<br /><span style={{ color: C.red, fontStyle: "italic" }}>are getting worse.</span></h1>
         </Fade>
         <Fade delay={400}>
           <p style={{ fontSize: 19, color: C.muted, maxWidth: 480, margin: "20px auto 0", lineHeight: 1.7 }}>
-            They peaked. <span style={{ color: C.body }}>We're tracking it.</span><br />
+            Smaller portions. Worse quality. Higher prices.<br />
             <span style={{ color: C.bright, fontWeight: 500 }}>Be the first to see the data.</span>
           </p>
         </Fade>
