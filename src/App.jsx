@@ -155,7 +155,7 @@ function ActivityTicker() {
           </span>
         </div>
         <span style={{ color: C.dim, fontFamily: C.mono, fontSize: 11, flexShrink: 0 }}>
-          {ACTIVITY_FEED.length * 214 + currentIndex * 17 + 2847} reports today
+          {ACTIVITY_FEED.length * 214 + currentIndex * 17 + 2847} on waitlist
         </span>
       </div>
 
@@ -361,7 +361,7 @@ function ThankYouView({ email, queuePosition, onShare }) {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const tweetText = encodeURIComponent(`I just joined the @ruind_app waitlist — 3,000+ people are catching brands in the act — shrinkflation, enshittification, all of it. Documented with receipts. 🔥\n\nJoin here: ${referralLink}`);
+  const tweetText = encodeURIComponent(`I just joined the @ruind_app waitlist — 3,000+ people are catching We tracked it — shrinkflation, enshittification, all of it. Documented with receipts. 🔥\n\nJoin here: ${referralLink}`);
 
   return (
     <div style={{ maxWidth: 560, margin: "0 auto", padding: "60px 24px", textAlign: "center" }}>
@@ -595,8 +595,8 @@ export default function App() {
             margin: "0 0 20px 0",
             letterSpacing: "-0.02em",
           }}>
-            3,000+ people catching<br />
-            <span style={{ color: C.red }}>brands in the act.</span>
+            They peaked.<br />
+            <span style={{ color: C.red }}>We tracked it.</span>
           </h1>
         </FadeIn>
 
@@ -705,10 +705,10 @@ export default function App() {
         <FadeIn>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
             <span style={{ fontFamily: C.mono, fontSize: 11, color: C.dim, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-              📋 Community-Verified Decline Reports
+              📋 Preview: Decline Reports
             </span>
             <div style={{ flex: 1, height: 1, background: C.border }} />
-            <span style={{ fontFamily: C.mono, fontSize: 11, color: C.dim }}>backed by receipts</span>
+            <span style={{ fontFamily: C.mono, fontSize: 11, color: C.dim }}>what Ruind will track</span>
           </div>
           <p style={{ fontFamily: C.sans, fontSize: 14, color: C.dim, margin: "0 0 24px 0" }}>
             Every data point below was verified by community members. Peak score vs now. Real numbers.
@@ -821,8 +821,8 @@ export default function App() {
             fontStyle: "italic", color: C.white,
             margin: "0 0 16px", lineHeight: 1.2,
           }}>
-            3,000+ people catching<br />
-            <span style={{ color: C.red }}>brands in the act.</span>
+            They peaked.<br />
+            <span style={{ color: C.red }}>We tracked it.</span>
           </h2>
           <p style={{ fontFamily: C.sans, fontSize: 16, color: C.body, margin: "0 0 36px", lineHeight: 1.6 }}>
             Be first to know when it launches. Every report you submit makes the database harder to ignore.
@@ -863,7 +863,7 @@ export default function App() {
             </div>
           </form>
           <p style={{ fontFamily: C.sans, fontSize: 12, color: C.dim }}>
-            Free forever for founding members. Join {count.toLocaleString()}+ already in.
+            Free forever for founding members. Join {count.toLocaleString()}+ on the waitlist.
           </p>
         </FadeIn>
       </section>
