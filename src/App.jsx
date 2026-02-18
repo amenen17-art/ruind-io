@@ -595,8 +595,8 @@ export default function App() {
             margin: "0 0 20px 0",
             letterSpacing: "-0.02em",
           }}>
-            Your favorite products<br />
-            <span style={{ color: C.red }}>are getting worse.</span>
+            3,000+ people catching<br />
+            <span style={{ color: C.red }}>brands in the act.</span>
           </h1>
         </FadeIn>
 
@@ -821,8 +821,8 @@ export default function App() {
             fontStyle: "italic", color: C.white,
             margin: "0 0 16px", lineHeight: 1.2,
           }}>
-            They're counting on you<br />
-            <span style={{ color: C.red }}>not noticing.</span>
+            3,000+ people catching<br />
+            <span style={{ color: C.red }}>brands in the act.</span>
           </h2>
           <p style={{ fontFamily: C.sans, fontSize: 16, color: C.body, margin: "0 0 36px", lineHeight: 1.6 }}>
             Be first to know when it launches. Every report you submit makes the database harder to ignore.
