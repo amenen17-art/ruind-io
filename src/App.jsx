@@ -65,7 +65,6 @@ export default function RuindLanding() {
         @keyframes glow{0%,100%{box-shadow:0 0 20px ${C.redGlow}}50%{box-shadow:0 0 40px ${C.redGlow},0 0 80px rgba(229,56,59,.06)}}
       `}</style>
 
-      {/* Nav */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: `${C.bg}dd`, backdropFilter: "blur(16px)", borderBottom: `1px solid ${C.border}`, padding: "0 24px", height: 52, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "baseline", gap: 2 }}>
           <span style={{ fontFamily: C.serif, fontSize: 28, fontWeight: 700, color: C.white, letterSpacing: "-0.02em" }}>ruind</span>
@@ -75,29 +74,18 @@ export default function RuindLanding() {
         <button onClick={() => emailRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })} style={{ padding: "7px 18px", borderRadius: 8, background: C.red, border: "none", color: "white", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: C.sans }}>Join Waitlist</button>
       </nav>
 
-      {/* Hero */}
       <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "80px 24px 60px", position: "relative" }}>
         <div style={{ position: "absolute", top: "-10%", left: "50%", transform: "translateX(-50%)", width: 600, height: 600, background: `radial-gradient(circle,${C.red}08 0%,transparent 70%)`, pointerEvents: "none" }} />
         <div style={{ position: "absolute", inset: 0, opacity: 0.02, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")", pointerEvents: "none" }} />
-
         <Fade delay={100}>
-          <div style={{ display: "inline-block", padding: "5px 14px", borderRadius: 20, background: C.redGlow, border: `1px solid ${C.red}30`, fontSize: 12, fontWeight: 600, color: C.red, fontFamily: C.mono, marginBottom: 28, animation: "pulse 3s ease infinite" }}>
-            ● Coming Soon — Join the Waitlist
-          </div>
+          <div style={{ display: "inline-block", padding: "5px 14px", borderRadius: 20, background: C.redGlow, border: `1px solid ${C.red}30`, fontSize: 12, fontWeight: 600, color: C.red, fontFamily: C.mono, marginBottom: 28, animation: "pulse 3s ease infinite" }}>● Coming Soon — Join the Waitlist</div>
         </Fade>
-
         <Fade delay={250}>
-          <h1 style={{ fontSize: "clamp(42px,8vw,72px)", fontWeight: 400, fontFamily: C.serif, color: C.white, lineHeight: 1.05, letterSpacing: "-0.03em", maxWidth: 700 }}>
-            They peaked.<br /><span style={{ color: C.red, fontStyle: "italic" }}>We tracked it.</span>
-          </h1>
+          <h1 style={{ fontSize: "clamp(42px,8vw,72px)", fontWeight: 400, fontFamily: C.serif, color: C.white, lineHeight: 1.05, letterSpacing: "-0.03em", maxWidth: 700 }}>They peaked.<br /><span style={{ color: C.red, fontStyle: "italic" }}>We tracked it.</span></h1>
         </Fade>
-
         <Fade delay={400}>
-          <p style={{ fontSize: 18, color: C.muted, maxWidth: 480, margin: "20px auto 0", lineHeight: 1.6 }}>
-            Google. Netflix. Instagram. The products you loved got worse — and now there's a record.
-          </p>
+          <p style={{ fontSize: 18, color: C.muted, maxWidth: 480, margin: "20px auto 0", lineHeight: 1.6 }}>Smaller portions. Worse quality. Higher prices. Finally, someone's tracking it.</p>
         </Fade>
-
         <Fade delay={550}>
           <div style={{ marginTop: 36, width: "100%", maxWidth: 440 }}>
             {!submitted ? (
@@ -117,22 +105,16 @@ export default function RuindLanding() {
                 </div>
               </div>
             )}
-            <p style={{ fontSize: 12, color: C.dim, marginTop: 10, fontFamily: C.mono }}>
-              No spam. Unsubscribe anytime. <span style={{ color: C.muted }}>Join <AnimNum target={1847} /> others.</span>
-            </p>
+            <p style={{ fontSize: 12, color: C.dim, marginTop: 10, fontFamily: C.mono }}>No spam. Unsubscribe anytime. <span style={{ color: C.muted }}>Join <AnimNum target={1847} /> others.</span></p>
           </div>
         </Fade>
-
         <Fade delay={800}><div style={{ position: "absolute", bottom: 32, animation: "float 2.5s ease infinite", color: C.dim, fontSize: 13, fontFamily: C.mono }}>↓ scroll</div></Fade>
       </section>
 
-      {/* Preview */}
       <section style={{ padding: "80px 24px", maxWidth: 880, margin: "0 auto" }}>
         <Fade>
           <div style={{ textAlign: "center", marginBottom: 40 }}>
-            <h2 style={{ fontSize: 32, fontWeight: 400, color: C.white, fontFamily: C.serif, lineHeight: 1.2 }}>
-              See the decline. <span style={{ color: C.red, fontStyle: "italic" }}>In real time.</span>
-            </h2>
+            <h2 style={{ fontSize: 32, fontWeight: 400, color: C.white, fontFamily: C.serif, lineHeight: 1.2 }}>See the decline. <span style={{ color: C.red, fontStyle: "italic" }}>In real time.</span></h2>
             <p style={{ fontSize: 15, color: C.muted, marginTop: 10, maxWidth: 420, margin: "10px auto 0" }}>Community-tracked quality timelines for the products you care about.</p>
           </div>
         </Fade>
@@ -161,7 +143,6 @@ export default function RuindLanding() {
         </div>
       </section>
 
-      {/* Features */}
       <section style={{ padding: "60px 24px 80px", maxWidth: 880, margin: "0 auto" }}>
         <Fade><h2 style={{ textAlign: "center", fontSize: 28, fontWeight: 400, color: C.white, fontFamily: C.serif, marginBottom: 40 }}>How it works</h2></Fade>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 12 }}>
@@ -177,7 +158,6 @@ export default function RuindLanding() {
         </div>
       </section>
 
-      {/* Social Proof */}
       <section style={{ padding: "60px 24px 80px", maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
         <Fade>
           <div style={{ padding: "32px 28px", background: C.surface, border: `1px solid ${C.border}`, borderRadius: 20 }}>
@@ -189,19 +169,14 @@ export default function RuindLanding() {
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: 17, color: C.bright, fontFamily: C.serif, fontStyle: "italic", lineHeight: 1.65, maxWidth: 520, margin: "0 auto" }}>
-              "Enshittification" was named 2023 Word of the Year. Cory Doctorow published a book on it. 1.5 million people discuss it daily on Reddit. There is no tracker. Until now.
-            </p>
+            <p style={{ fontSize: 17, color: C.bright, fontFamily: C.serif, fontStyle: "italic", lineHeight: 1.65, maxWidth: 520, margin: "0 auto" }}>"Enshittification" was named 2023 Word of the Year. Cory Doctorow published a book on it. 1.5 million people discuss it daily on Reddit. There is no tracker. Until now.</p>
           </div>
         </Fade>
       </section>
 
-      {/* Final CTA */}
       <section style={{ padding: "60px 24px 100px", textAlign: "center" }}>
         <Fade>
-          <h2 style={{ fontSize: 36, fontWeight: 400, fontFamily: C.serif, color: C.white, lineHeight: 1.15, marginBottom: 16 }}>
-            Be first to know when it <span style={{ color: C.red, fontStyle: "italic" }}>launches</span>.
-          </h2>
+          <h2 style={{ fontSize: 36, fontWeight: 400, fontFamily: C.serif, color: C.white, lineHeight: 1.15, marginBottom: 16 }}>Be first to know when it <span style={{ color: C.red, fontStyle: "italic" }}>launches</span>.</h2>
           {!submitted ? (
             <div style={{ maxWidth: 400, margin: "0 auto" }}>
               <form onSubmit={handleSubmit} style={{ display: "flex", gap: 8 }}>
@@ -215,7 +190,6 @@ export default function RuindLanding() {
         </Fade>
       </section>
 
-      {/* Footer */}
       <footer style={{ padding: 24, borderTop: `1px solid ${C.border}`, textAlign: "center", fontSize: 12, color: C.dim, fontFamily: C.mono }}>
         <span style={{ fontFamily: C.serif, color: C.muted }}>ruind</span><span style={{ color: C.red }}>.</span><span>io</span>
         <span style={{ margin: "0 10px", color: C.border }}>|</span>© 2025 · Built in Miami
