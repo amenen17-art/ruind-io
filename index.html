@@ -1,28 +1,649 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ruind.io — They shrank it. We caught them.</title>
-    <meta name="description" content="Smaller portions. Worse quality. Higher prices. Join 3,000+ people catching brands in the act. Free, no spam." />
-    <!-- Open Graph -->
-    <meta property="og:title" content="Ruind.io — They shrank it. We caught them." />
-    <meta property="og:description" content="Smaller portions. Worse quality. Higher prices. Join 3,000+ people catching brands in the act. Free, no spam." />
-    <meta property="og:image" content="https://www.ruind.io/og-image.png" />
-    <meta property="og:url" content="https://www.ruind.io" />
-    <meta property="og:type" content="website" />
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@ruind_app" />
-    <meta name="twitter:title" content="Ruind.io — They shrank it. We caught them." />
-    <meta name="twitter:description" content="Smaller portions. Worse quality. Higher prices. Join 3,000+ people catching brands in the act. Free, no spam." />
-    <meta name="twitter:image" content="https://www.ruind.io/og-image.png" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMIT Solutions of Miami and Miami Beach – Legal Technology Advisory and IT Support for Law Firms</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #1a2b4a;
+        }
+
+        h2 {
+            font-size: 2rem;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: #1a2b4a;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            color: #2d3e50;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: #2d3e50;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .subhead {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: #1a2b4a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #2d3e50;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #1a2b4a;
+            border: 2px solid #1a2b4a;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1a2b4a;
+            color: #ffffff;
+        }
+
+        .text-link {
+            color: #1a2b4a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .text-link:hover {
+            color: #2d3e50;
+        }
+
+        #home {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 100px 0;
+        }
+
+        #home .hero-content {
+            max-width: 800px;
+        }
+
+        #home .cta-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        #why {
+            background-color: #ffffff;
+        }
+
+        #why .why-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 30px;
+        }
+
+        #why .intro-column h3 {
+            margin-top: 25px;
+        }
+
+        #why ul {
+            list-style: none;
+        }
+
+        #why ul li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        #why ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #1a2b4a;
+            font-weight: bold;
+        }
+
+        #services-summary {
+            background-color: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .service-card h4 {
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        #services {
+            background-color: #ffffff;
+        }
+
+        .service-block {
+            margin-top: 50px;
+            padding: 40px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #1a2b4a;
+        }
+
+        .service-block h3 {
+            color: #1a2b4a;
+        }
+
+        .service-block ul {
+            margin-top: 20px;
+            list-style: none;
+        }
+
+        .service-block ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-block ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #1a2b4a;
+        }
+
+        #outcomes {
+            background-color: #f8f9fa;
+        }
+
+        #outcomes ul {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        #outcomes ul li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        #outcomes ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #1a2b4a;
+            font-weight: bold;
+        }
+
+        #process {
+            background-color: #ffffff;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #1a2b4a;
+            color: #ffffff;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        #about {
+            background-color: #f8f9fa;
+        }
+
+        .about-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .badge {
+            background-color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            font-weight: 600;
+            color: #2d3e50;
+        }
+
+        #contact {
+            background: linear-gradient(135deg, #1a2b4a 0%, #2d3e50 100%);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #contact h2 {
+            color: #ffffff;
+        }
+
+        #contact .subtext {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #contact .btn {
+            background-color: #ffffff;
+            color: #1a2b4a;
+        }
+
+        #contact .btn:hover {
+            background-color: #f8f9fa;
+        }
+
+        .contact-details {
+            margin-top: 50px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        footer {
+            background-color: #2d3e50;
+            color: #ffffff;
+            padding: 50px 0 30px;
+        }
+
+        footer .footer-content {
+            text-align: center;
+        }
+
+        footer .footer-brand {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-links a:hover {
+            color: #e9ecef;
+        }
+
+        footer .tagline {
+            font-size: 0.95rem;
+            color: #b0b8c1;
+            margin-top: 25px;
+        }
+
+        footer .social {
+            margin-top: 20px;
+        }
+
+        footer .social a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            #home {
+                padding: 80px 0;
+            }
+
+            #why .why-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            #home .cta-group {
+                flex-direction: column;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-badges {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section id="home">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Helping Miami Law Firms Reduce Friction and Make Better Technology Decisions</h1>
+            <p class="subhead">A practical, business focused approach to improving daily work, supported by a dedicated advisor and a full IT team.</p>
+            <p>I help small and mid sized Miami law firms make better technology decisions, modernize daily workflows, and work with confidence. Together with my team at CMIT Solutions of Miami and Miami Beach, supported by the nationwide CMIT network, we deliver secure IT, cloud, communications, and ongoing support so your firm runs smoothly without distractions.</p>
+            <div class="cta-group">
+                <a href="#contact" class="btn">Book a 15 minute intro call</a>
+                <a href="#services" class="btn btn-secondary">View our services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="why">
+    <div class="container">
+        <h2>Why Law Firms Choose to Work With Us</h2>
+        <p>Law firms have specific operational and communication needs that generic IT providers often miss.</p>
+        <div class="why-content">
+            <div class="intro-column">
+                <h3>A dedicated advisor and a full IT team behind you.</h3>
+            </div>
+            <div class="bullets-column">
+                <ul>
+                    <li>Protecting billable time by reducing tech related disruptions</li>
+                    <li>Improving collaboration between attorneys, staff, and clients</li>
+                    <li>Protecting client confidentiality with solid security foundations</li>
+                    <li>Making technology decisions clearer and less risky</li>
+                    <li>Aligning technology to real business outcomes, not just features</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services-summary">
+    <div class="container">
+        <h2>How We Help Your Firm</h2>
+        <p>We combine advisory guidance with day to day IT support to help your firm work more smoothly. You get one advisor to speak with and a full technical team to keep everything running.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <h4>Workflow and Practice Operations Clarity</h4>
+                <p>We map how work actually moves through your firm and highlight practical improvements that make daily work easier.</p>
+                <a href="#services" class="text-link">View details →</a>
+            </div>
+            <div class="service-card">
+                <h4>Technology Decision Support</h4>
+                <p>We help you understand your options and choose what fits your workflows, not vendor hype.</p>
+                <a href="#services" class="text-link">View details →</a>
+            </div>
+            <div class="service-card">
+                <h4>Practical AI Exploration (for example, Microsoft Copilot)</h4>
+                <p>We explore realistic and safe AI use cases that respect confidentiality and the way your team already works.</p>
+                <a href="#services" class="text-link">View details →</a>
+            </div>
+            <div class="service-card">
+                <h4>Legal Focused IT Support and Security</h4>
+                <p>Our CMIT team provides Microsoft 365 management, device support, security updates, backups, and more.</p>
+                <a href="#services" class="text-link">View details →</a>
+            </div>
+            <div class="service-card">
+                <h4>Modern, Legal Ready Communications</h4>
+                <p>We help modernize calling, messaging, and collaboration so attorneys can work effectively from the office, home, or courtroom.</p>
+                <a href="#services" class="text-link">View details →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <h2>Services for Miami Law Firms</h2>
+        <p class="subhead">Advisor led guidance supported by a full IT and security team.</p>
+        <p>We combine practical advisory support with reliable, legal focused IT services. You get one point of contact who understands your firm and a technical team that keeps everything running.</p>
+
+        <div class="service-block">
+            <h3>Workflow and Practice Operations Review</h3>
+            <p>We walk through how work really happens in your firm, including intake, documents, communication, matter progress, and billing touchpoints. Then we highlight practical improvements your team can implement without turning everything upside down.</p>
+            <p><strong>Key outcomes:</strong></p>
+            <ul>
+                <li>Clear view of where work slows down</li>
+                <li>Opportunities to simplify collaboration</li>
+                <li>A prioritized list of practical next steps</li>
+            </ul>
+        </div>
+
+        <div class="service-block">
+            <h3>Technology Decision Guidance</h3>
+            <p>You do not need to be an expert in tools, vendors, or buzzwords. We help you understand what is worth considering, compare options based on your workflows, and avoid both overbuying and under buying.</p>
+            <p><strong>Key outcomes:</strong></p>
+            <ul>
+                <li>More confident technology choices</li>
+                <li>Lower risk of expensive tools that go unused</li>
+                <li>Solutions that your team will actually use</li>
+            </ul>
+        </div>
+
+        <div class="service-block">
+            <h3>Practical AI Exploration (for example, Microsoft Copilot)</h3>
+            <p>We help your firm explore AI in a controlled and realistic way. That includes identifying specific use cases such as drafting, summarizing, search, and prep work, talking through risks and boundaries, and considering permissions, data access, and governance.</p>
+            <p><strong>Key outcomes:</strong></p>
+            <ul>
+                <li>AI use cases that make sense for your firm</li>
+                <li>A safer path to experimentation</li>
+                <li>A roadmap instead of a science project</li>
+            </ul>
+        </div>
+
+        <div class="service-block">
+            <h3>Legal Focused IT and Security Support (Delivered by Our CMIT Team)</h3>
+            <p>Our technical team provides the day to day backbone that keeps your firm running. That includes Microsoft 365 management, device and user management, security patches and endpoint protection, secure file access and backups, and remote and on site support in Miami Dade and Miami Beach.</p>
+            <p><strong>Key outcomes:</strong></p>
+            <ul>
+                <li>Fewer emergencies and surprises</li>
+                <li>Someone to call when things break</li>
+                <li>Better protection for sensitive data</li>
+            </ul>
+        </div>
+
+        <div class="service-block">
+            <h3>Modern Communication and Mobility for Attorneys</h3>
+            <p>We help your firm move toward modern, cloud based communications that support today's hybrid legal work. Attorneys can be reachable from the office, home, or courtroom, while calls and messages are routed properly and easier to manage.</p>
+            <p><strong>Key outcomes:</strong></p>
+            <ul>
+                <li>Fewer missed calls</li>
+                <li>More consistent client experience</li>
+                <li>Less frustration around who has the client</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="outcomes">
+    <div class="container">
+        <h2>What This Means for Your Firm</h2>
+        <p>When workflows, communication, AI, IT, and security are aligned, technology stops getting in the way and starts supporting the way your firm actually operates.</p>
+        <ul>
+            <li>More time focused on clients and cases</li>
+            <li>Fewer tech headaches and interruptions</li>
+            <li>Better client responsiveness and professionalism</li>
+            <li>More predictable operations and costs</li>
+            <li>A clearer plan for how technology will support your firm</li>
+        </ul>
+    </div>
+</section>
+
+<section id="process">
+    <div class="container">
+        <h2>How We Work Together</h2>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Initial Conversation</h4>
+                <p>We discuss your workflows, pain points, and goals.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>Simple, Outcome Focused Plan</h4>
+                <p>You receive clear, prioritized recommendations.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Implementation by Our CMIT Team</h4>
+                <p>We handle the technical work with minimal disruption to your staff and attorneys.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>Ongoing Partnership</h4>
+                <p>We check in regularly and continue to improve your environment as your firm and technology evolve.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <h2>About Anthony and CMIT Solutions of Miami</h2>
+        <p>I am a business technology advisor focused on helping small and mid sized law firms in Miami work more smoothly and make better decisions about their technology.</p>
+        <p>Before launching CMIT Solutions of Miami and Miami Beach, I worked in enterprise SaaS and cloud solution sales, helping large organizations evaluate and adopt complex platforms. My role was to understand each company's business, objectives, and risks, and to recommend a solution only when it was a good match for what they were trying to achieve. That experience taught me to ask the right questions, cut through complexity, and focus on outcomes that actually matter.</p>
+        <p>Today I bring that same approach to law firms, but from the other side of the table. Instead of selling a specific product, I help firms understand their workflows, reduce friction in daily work, and choose technology that truly supports the way they practice.</p>
+        <p>You get one advisor who learns how your firm works, supported by a full IT and security team at CMIT Solutions of Miami and Miami Beach and the broader CMIT network.</p>
+        <div class="about-badges">
+            <div class="badge">Advisor led approach</div>
+            <div class="badge">Legal focused workflows</div>
+            <div class="badge">Local presence in Miami Dade and Miami Beach</div>
+            <div class="badge">Supported by the national CMIT network</div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2>A better technology experience starts with a simple conversation.</h2>
+        <p class="subtext">If you would like to reduce friction in daily work and feel more confident about your technology decisions, we can start with a short, no pressure call.</p>
+        <a href="#contact" class="btn">Book a 15 minute intro call</a>
+        <div class="contact-details">
+            <p><strong>CMIT Solutions of Miami and Miami Beach</strong></p>
+            <p>Email: info@example.com</p>
+            <p>Phone: (305) 555 1234</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">CMIT Solutions of Miami and Miami Beach</div>
+            <nav class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p class="tagline">Advisor led, team backed IT for Miami law firms.</p>
+            <div class="social">
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
 </html>
