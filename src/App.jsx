@@ -901,7 +901,7 @@ function Nav() {
       display: "flex", alignItems: "center", justifyContent: "space-between",
       padding: "18px 32px", maxWidth: 1100, margin: "0 auto",
     }}>
-      <div style={{ fontFamily: "'Instrument Serif', serif", fontSize: 22, color: C.white, fontStyle: "italic" }}>
+      <div style={{ fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif", fontSize: 22, fontWeight: 400, fontStyle: "normal", color: C.white, letterSpacing: "-0.01em" }}>
         ruind.<span style={{ color: C.red }}>io</span>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
