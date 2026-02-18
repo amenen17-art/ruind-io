@@ -680,6 +680,26 @@ export default function App() {
         </FadeIn>
       </section>
 
+
+      {/* ── Why Ruind? ── */}
+      <section style={{ borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}`, padding: '80px 24px' }}>
+        <div style={{ maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
+          <FadeIn>
+            <span style={{ fontFamily: C.mono, fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: C.red, display: 'inline-block', marginBottom: 20 }}>Why Ruind?</span>
+            <h2 style={{ fontFamily: C.serif, fontSize: 'clamp(28px, 5vw, 44px)', fontStyle: 'italic', color: C.white, lineHeight: 1.2, margin: '0 0 24px' }}>Because you're not<br />imagining it.</h2>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p style={{ fontFamily: C.sans, fontSize: 'clamp(15px, 2.2vw, 18px)', color: C.body, lineHeight: 1.75, margin: '0 auto 28px', maxWidth: 560 }}>Your favorite products <strong style={{ color: C.bright }}>are</strong> getting worse. Brands quietly shrink portions, cut quality, and raise prices — hoping you won't notice.</p>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <p style={{ fontFamily: C.sans, fontSize: 'clamp(15px, 2.2vw, 18px)', color: C.bright, lineHeight: 1.75, margin: '0 auto 36px', maxWidth: 560, fontWeight: 500 }}>We noticed.</p>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <p style={{ fontFamily: C.sans, fontSize: 'clamp(14px, 2vw, 16px)', color: C.muted, lineHeight: 1.75, margin: '0 auto', maxWidth: 540 }}>Ruind is building a community to document shrinkflation, enshittification, and price hikes — with receipts, not opinions. Every report will be verified. Every decline tracked. Every brand held accountable.</p>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── Hot Takes ── */}
       <section style={{ maxWidth: 900, margin: "0 auto", padding: "0 24px 72px" }}>
         <FadeIn>
